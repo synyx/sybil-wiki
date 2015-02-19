@@ -4,13 +4,20 @@ toc: yes
 title: Welcome to the Sybil Documentation Wiki
 ...
 
-# Accounts
+# API Documentation
 
-To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here.
+[resources]()  
+[relations](rels)  
+[errors]()
 
 # Editing
 
 This wiki uses Pandoc to create it's pages. For further information on supported markup languages, see [Help](). The default is Markdown with [Pandown Extensions](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown)
+
+## Accounts
+
+To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here.
+
 
 ## Code & Syntax Highlighting
 
