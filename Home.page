@@ -8,7 +8,11 @@ title: Welcome to the Sybil Documentation Wiki
 
 To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here.
 
-# Code & Syntax Highlighting
+# Editing
+
+This wiki uses Pandoc to create it's pages. For further information on supported markup languages, see [Help](). The default is Markdown with [Pandown Extensions](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown)
+
+## Code & Syntax Highlighting
 
 To post code use 
 
