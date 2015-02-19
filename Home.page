@@ -1,7 +1,61 @@
 ---
 format: Markdown
+toc: yes
+title: Welcome to the Sybil Documentation Wiki
 ...
 
-# Welcome to the Sybil Documentation Wiki
+# Accounts
 
 To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here.
+
+# Code & Syntax Highlighting
+
+To post code use 
+
+~~~
+```
+~~~
+
+to mark code blocks, optionally with syntax highlighting by adding the language name after the ```.
+
+**Example**:
+
+~~~
+```json
+{
+  "_links": {
+    "self": { "href": "https://api.sybil.synyx.coffee/configuration/lights/tisch_contargo" },
+    "curies": [
+      {
+        "name": "doc",
+        "href": "http://wiki.sybil.synyx.coffee/rels/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "doc:uid": "ah3",
+  "doc:brick": "synerforge001",
+  "doc:relay": 1
+}
+```
+~~~
+
+will result in:
+
+```json
+{
+  "_links": {
+    "self": { "href": "https://api.sybil.synyx.coffee/configuration/lights/tisch_contargo" },
+    "curies": [
+      {
+        "name": "doc",
+        "href": "http://wiki.sybil.synyx.coffee/rels/{rel}",
+        "templated": true
+      }
+    ]
+  },
+  "doc:uid": "ah3",
+  "doc:brick": "synerforge001",
+  "doc:relay": 1
+}
+```
