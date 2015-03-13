@@ -4,69 +4,34 @@ toc: yes
 title: Welcome to the Sybil Documentation Wiki
 ...
 
-# API Documentation
+# Getting Started
 
-[resources]()  
-[relations](rels)  
-[errors]()
+Sybil currently runs only one service: Jenkins Build Breaker Lights.  
+This means it is showing the state (Succes, Unstable, or Failed) of a Jenkins job as a color on a LED strip.
 
-# Editing
+## Configuring the Jenkins Build Breaker Lights
 
-This wiki uses Pandoc to create it's pages. For further information on supported markup languages, see [Help](). The default is Markdown with [Pandoc Extensions](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown)
+To change which Jenkins jobs are displayed on which LED strips, log in to the user `sybil-config` on `sybil.synyx.coffee`. Then edit the file `jenkins.json`.
+
+This is an array of objects with the properties `name` and `ledstrip`, e.g. ``{"name": "job_example_one", "ledstrip": "indy"}``.  
+Make sure it's valid JSON: Don't forget to end every line of the array - *except the last one* - with a comma.
+
+When you are done, run `./reloadJenkinsConfig.sh`.
+
+## Low Level Stuff
+
+Sybil runs on `sybil.synyx.coffee` on the user `sybil` in a screen named `sybil`, this wiki runs on the same user in a screen named `gitit`.
+
+If you change the `bricks.json` or `ledstrips.json` configuration files (in /home/sybil-config/) you have to restart the server.  
+To do that, enter the sybil screen (`screen -r sybil`), press Enter to stoledp the server and once you are back on the shell type `./run.sh` to start the server.
+
+If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
+To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
+
+# Editing this wiki
+
+This wiki uses Pandoc to create it's pages. For further information on supported markup languages, see [Help](). The default is Markdown with [Pandoc Extensions](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown) but without syntax-highlighting.
 
 ## Accounts
 
-To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here.
-
-
-## Code & Syntax Highlighting
-
-To post code use 
-
-~~~
-```
-~~~
-
-to mark code blocks, optionally with syntax highlighting by adding the language name after the ```.
-
-**Example**:
-
-~~~
-```json
-{
-  "_links": {
-    "self": { "href": "https://api.sybil.synyx.coffee/configuration/lights/tisch_contargo" },
-    "curies": [
-      {
-        "name": "doc",
-        "href": "http://wiki.sybil.synyx.coffee/rels/{rel}",
-        "templated": true
-      }
-    ]
-  },
-  "doc:uid": "ah3",
-  "doc:brick": "synerforge001",
-  "doc:relay": 1
-}
-```
-~~~
-
-will result in:
-
-```json
-{
-  "_links": {
-    "self": { "href": "https://api.sybil.synyx.coffee/configuration/lights/tisch_contargo" },
-    "curies": [
-      {
-        "name": "doc",
-        "href": "http://wiki.sybil.synyx.coffee/rels/{rel}",
-        "templated": true
-      }
-    ]
-  },
-  "doc:uid": "ah3",
-  "doc:brick": "synerforge001",
-  "doc:relay": 1
-}
-```
+To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here../reloadJenkinsConfig.shled
