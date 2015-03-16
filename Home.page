@@ -15,7 +15,7 @@ The configuration files follow [these schemata](https://github.com/synyx/sybil/t
 
 To change which Jenkins jobs are displayed on which LED strips, log in to the user `sybil-config` (password is the same as the username) on `sybil.synyx.coffee`. Then edit the file `jenkins.json`.
 
-This is an array of objects with the properties `name` and `ledstrip`, e.g. ``{"name": "job_example_one", "ledstrip": "indy"}``.  
+This is an array of objects with the properties `name` (the Jenkins job name) and `ledstrip` (the name of the ledstrip, check all configured led strips [here](http://api.sybil.synyx.coffee/configuration/ledstrips/)), e.g. ``{"name": "job_example_one", "ledstrip": "indy"}``.  255
 Make sure it's valid JSON: Don't forget to end every line of the array - *except the last one* - with a comma.
 
 When you are done, run `./reloadJenkinsConfig.sh`.
