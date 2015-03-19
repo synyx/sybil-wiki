@@ -25,7 +25,7 @@ When you are done, run `./reloadJenkinsConfig.sh`.
 Sybil runs on `sybil.synyx.coffee` on the user `sybil` in a screen named `sybil`, this wiki runs on the same user in a screen named `gitit`.
 
 If you change the `bricks.json` or `ledstrips.json` configuration files (in /home/sybil-config/) you have to restart the server.  
-To do that, enter the sybil screen (`screen -r sybil`), press Enter to stoledp the server and once you are back on the shell type `./run.sh` to start the server.
+To do that, enter the sybil screen (`screen -r sybil`), press Enter to stop the server and once you are back on the shell type `./run.sh` to start the server.
 
 If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
 To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
