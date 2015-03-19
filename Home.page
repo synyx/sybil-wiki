@@ -7,7 +7,7 @@ title: Welcome to the Sybil Documentation Wiki
 # Getting Started
 
 Sybil currently runs only one service: Jenkins Build Breaker Lights.  
-This means it is showing the state (Succes, Unstable, or Failed) of a Jenkins job as a color on a LED strip.
+This means it is showing the state (Success, Unstable, or Failed) of a Jenkins job as a color on a LED strip.
 
 ## Configuring the Jenkins Build Breaker Lights
 
@@ -15,15 +15,21 @@ This means it is showing the state (Succes, Unstable, or Failed) of a Jenkins jo
 
 To change which Jenkins jobs are displayed on which LED strips, log in to the user `sybil-config` (password is the same as the username) on `sybil.synyx.coffee`. Then edit the file `jenkins.json`.
 
-This is an array of objects with the properties `name` (the Jenkins job name) and `ledstrip` (the name of the ledstrip), e.g. ``{"name": "job_example_one", "ledstrip": "indy"}``. Make sure it's valid JSON: Don't forget to end every line of the array - *except the last one* - with a comma.
+This is a list of named arrays. The name of each array refers to a Jenkins server. **Do not edit these names**; they are only references, the servers are configured elsewhere.
 
-When you are done, run `./reloadJenkinsConfig.sh`.
+Each array consists of objects with the properties `name` (the Jenkins job name) and `ledstrip` (the name of the ledstrip), e.g. ``{"name": "job_example_one", "ledstrip": "indy"}``. Make sure it's valid JSON: Don't forget to end every line of the array - *except the last one* - with a comma.
+
+When you are done, run `./reloadJenkinsConfig.sh`. If everything went okay, the output should be short and the first line should read `HTTP/1.1 200 OK`.  
+If there is an Error (probably accompanied by a lot of HTML and Java) look at the file again and make sure it's valid.
 
 ## Low Level Stuff
 
 Sybil runs on `sybil.synyx.coffee` on the user `sybil` in a screen named `sybil`, this wiki runs on the same user in a screen named `gitit`.
 
-If you change the `bricks.json` or `ledstrips.json` configuration files (in /home/sybil-config/) you have to restart the server.  
+The configuration is split between the files `jenkinsservers.json` in `/home/sybil/` and `bricks.json`, `ledstrips.json`, and `jenkins.json` in `/home/sybil-config/`.  
+`jenkinsservers.json` contains the URLs and access data for the Jenkins servers, `bricks.json` contains the configuration data for the Tinkerforge bricks, `ledstrips.json` the configuration data for the LED Strips connected to the bricks and `jenkins.json` the configuration for the Jenkins jobs.
+
+If you change any file other than `jenkins.json` you have to restart the server.  
 To do that, enter the sybil screen (`screen -r sybil`), press Enter to stop the server and once you are back on the shell type `./run.sh` to start the server.
 
 If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
