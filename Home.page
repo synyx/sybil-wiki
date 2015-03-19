@@ -36,4 +36,4 @@ This wiki uses Pandoc to create it's pages. For further information on supported
 
 ## Accounts
 
-To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here../reloadJenkinsConfig.shled
+To edit, you need an account. There is - as of yet - no connection to LDAP, so you have to create an account here.
