@@ -1,0 +1,75 @@
+---
+format: markdown
+title: Configuration
+...
+
+# Configuring the Jenkins Build Breaker Lights
+
+### Step 1: Log in to the Sybil server
+
+`$ ssh sybil-config@sybil.synyx.coffee`  
+The password is: `sybil-config`
+
+### Step 2: Edit the file `jenkins.json`
+
+#### Step 2.1
+
+`$ vim jenkins.json`  
+or  
+`$ nano jenkins.json`  
+
+#### Step 2.2
+
+Now you will see a file that looks similar to this:
+
+```
+{
+  "https://jenkins.example.com": [
+    {"name": "example1-build", "ledstrip": "example1"},
+
+    {"name": "example2", "ledstrip": "example2"}
+  ],
+  "http://jenkins2.example.com": [
+    {"name": "example3", "ledstrip": "example3"},
+  ]
+}
+```
+
+The highest level elements beginning with `http` or `https` are references to the Jenkins servers.  
+**Do not edit them, the servers are configured elsehwere.**  
+
+Each server has an array of objects which configure which jobs from this server are shown on which ledstrip:
+
+`{"name": "example1", "ledstrip": "example1"}`  
+
+* `name` is the name of the jobs as it is in Jenkins.  
+* `ledstrip` is the name of the LED strip on which to show the job status on, as configured in `ledstrips.json`.
+
+Edit, add to or remove these lines as necessary, making sure to keep the same format and that the file is valid JSON. Use whitespace to keep the file easily readable.
+
+#### Step 2.3
+
+Save the file and exit the editor. In vim type `:wq`, in nano press `Ctrl+O Ctrl+X`.
+
+### Step 3: Load the new configuration
+
+`$ ./reloadJenkinsConfig.sh`
+
+If everything went right, the program will output something similar to this:
+
+```
+HTTP/1.1 200 OK
+Date: Fri, 20 Mar 2015 12:27:19 GMT
+Server: Jetty(9.2.9.v20150224)
+Content-Length: 0
+Via: 1.1 api.sybil.example.com
+Connection: close
+```
+
+This means the configuration was loaded correctly.
+
+If there is a bigger output, beginning with  
+`HTTP/1.1 500 Server Error`  
+and a lot of HTML and Java in it, something went wrong and the configuration was not loaded. The old configuration is still active.
+
+Most likely you made a mistake editing the file `jenkins.json`. You should go back and make sure it is valid JSON and conforms to the format in the example above.
