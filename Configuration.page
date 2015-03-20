@@ -73,3 +73,17 @@ If there is a bigger output, beginning with
 and a lot of HTML and Java in it, something went wrong and the configuration was not loaded. The old configuration is still active.
 
 Most likely you made a mistake editing the file `jenkins.json`. You should go back and make sure it is valid JSON and conforms to the format in the example above.
+
+
+# Low Level Stuff
+
+Sybil runs on `sybil.synyx.coffee` on the user `sybil` in a screen named `sybil`, this wiki runs on the same user in a screen named `gitit`.
+
+The configuration is split between the files `jenkinsservers.json` in `/home/sybil/` and `bricks.json`, `ledstrips.json`, and `jenkins.json` in `/home/sybil-config/`.  
+`jenkinsservers.json` contains the URLs and access data for the Jenkins servers, `bricks.json` contains the configuration data for the Tinkerforge bricks, `ledstrips.json` the configuration data for the LED Strips connected to the bricks and `jenkins.json` the configuration for the Jenkins jobs.
+
+If you change any file other than `jenkins.json` you have to restart the server.  
+To do that, enter the sybil screen (`screen -r sybil`), press Enter to stop the server and once you are back on the shell type `./run.sh` to start the server.
+
+If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
+To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
