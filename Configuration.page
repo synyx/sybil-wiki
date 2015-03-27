@@ -41,7 +41,7 @@ The highest level elements beginning with `http` or `https` are references to th
 Each server has an array of objects which configure which jobs from this server are shown on which ledstrip:
 
 `{"name": "example1", "ledstrip": "example1"}`  
-
+http://doc.sybil.synyx.coffee/_edit/Configuration
 * `name` is the name of the jobs as it is in Jenkins.  
 * `ledstrip` is the name of the LED strip on which to show the job status on, as configured in `ledstrips.json`.
 
@@ -77,13 +77,13 @@ Most likely you made a mistake editing the file `jenkins.json`. You should go ba
 
 # Low Level Stuff
 
-Sybil runs on `sybil.synyx.coffee` on the user `sybil` in a screen named `sybil`, this wiki runs on the same user in a screen named `gitit`.
+Sybil runs on `sybil.synyx.coffee` on a tomcat server in /home/sybil/tomcat/, this wiki runs on the user `sybil` user in a screen named `gitit`.
 
 The configuration is split between the files `jenkinsservers.json` in `/home/sybil/` and `bricks.json`, `ledstrips.json`, and `jenkins.json` in `/home/sybil-config/`.  
 `jenkinsservers.json` contains the URLs and access data for the Jenkins servers, `bricks.json` contains the configuration data for the Tinkerforge bricks, `ledstrips.json` the configuration data for the LED Strips connected to the bricks and `jenkins.json` the configuration for the Jenkins jobs.
 
 If you change any file other than `jenkins.json` you have to restart the server.  
-To do that, enter the sybil screen (`screen -r sybil`), press Enter to stop the server and once you are back on the shell type `./run.sh` to start the server.
+To do that go to the [Tomcat manager](http://api.sybil.synyx.coffee/manager/html) and login with username `sybil` and password `ramkin`. Then click on the "Reload"-Button for the Application with the `/` path.
 
-If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
+If you change the wiki's config file (`/homeTomcat manager/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
 To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
