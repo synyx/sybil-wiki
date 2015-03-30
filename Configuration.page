@@ -77,13 +77,21 @@ Most likely you made a mistake editing the file `jenkins.json`. You should go ba
 
 # Low Level Stuff
 
+## Servers
+
 Sybil runs on `sybil.synyx.coffee` on a tomcat server in /home/sybil/tomcat/, this wiki runs on the user `sybil` user in a screen named `gitit`.
+
+## Configuration files
 
 The configuration is split between the files `jenkinsservers.json` in `/home/sybil/` and `bricks.json`, `ledstrips.json`, and `jenkins.json` in `/home/sybil-config/`.  
 `jenkinsservers.json` contains the URLs and access data for the Jenkins servers, `bricks.json` contains the configuration data for the Tinkerforge bricks, `ledstrips.json` the configuration data for the LED Strips connected to the bricks and `jenkins.json` the configuration for the Jenkins jobs.
 
+## Restarting Sybil
+
 If you change any file other than `jenkins.json` you have to restart the server.  
 To do that go to the [Tomcat manager](http://api.sybil.synyx.coffee/manager/html) and login with username `sybil` and password `ramkin`. Then click on the "Reload"-Button for the Application with the `/` path.
 
-If you change the wiki's config file (`/homeTomcat manager/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
+## Restarting the Wiki
+
+If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
 To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
