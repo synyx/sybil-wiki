@@ -70,10 +70,13 @@ Connection: close
 
 This means the configuration was loaded correctly.
 
-If there is a bigger output, beginning with  
+If you see output beginning with  
 `HTTP/1.1 500 Server Error`  
-and a lot of HTML and Java in it, something went wrong and the configuration was not loaded. The old configuration is still active.
+or  
+`HTTP/1.1 409 Conflict`  
+something went wrong and the configuration was not loaded. The old configuration is still active.
 
+Hopefully there should be a helpful error message, explaining what went wrong.  
 Most likely you made a mistake editing the file `jenkins.json`. You should go back and make sure it is valid JSON and conforms to the format in the example above.
 
 
