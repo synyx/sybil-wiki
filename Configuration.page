@@ -53,6 +53,8 @@ Save the file and exit the editor. In vim type `:wq`, in nano press `Ctrl+O Ctrl
 
 ### Step 3: Load the new configuration
 
+Run
+
 `$ ./reloadJenkinsConfig.sh`
 
 If everything went right, the program will output something similar to this:
