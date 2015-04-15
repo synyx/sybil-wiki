@@ -148,9 +148,10 @@ The Jenkins servers are configured in `/home/sybil/jenkinsservers.json`, and it 
 
 Let's break this down:
 
-* `url` is the URL under which the Jenkins server runs. Note that it must begin with either `http://` or `https://`, depending on its SSL support. It must not end with a `/`!  
+* `url` is the base URL under which the Jenkins server runs. Note that it must begin with either `http://` or `https://`, depending on its SSL support. It must not end with a slash(`/`)!  
 These are the same URLs as in the `jenkins.json` where they are used as identifiers. **If you change a URL here, you have to change it there, too!**
-
+* `user` is a user that has read access to the API.
+* `key` is the user's API key, which can be found on the user's *Configure* page under *API Token*.
 
 ## Restarting the Wiki
 
