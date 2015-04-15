@@ -9,7 +9,7 @@ title: Welcome to the Sybil Documentation Wiki
 Sybil currently runs only one service: Jenkins Build Breaker Lights.  
 This means it is showing the state (Success, Unstable, or Failed) of a Jenkins job as a color on a LED strip.
 
-[Configuring the Jenkins Build Breaker Lights](Configuration)  
+[Configuration]()  
 
 [Directly accessing the LEDs](Hidden API)
 
