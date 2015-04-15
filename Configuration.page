@@ -124,16 +124,6 @@ Let's go through this:
 * `brick` is the name of the brick (configured above) to which the LED Strip bricklet is connected.
 * `okay*`, `warning*`, and `critical*` are *optional* and allow to set the colors of the different states to whatever you like.
 
-
-# Servers
-
-Sybil runs on `sybil.synyx.coffee` on a tomcat server in /home/sybil/tomcat/, this wiki runs on the user `sybil` user in a screen named `gitit`.
-
-## Restarting Sybil
-
-If you change any file other than `jenkins.json` you have to restart the server.  
-To do that go to the [Tomcat manager](http://api.sybil.synyx.coffee/manager/html) and login with username `sybil` and password `ramkin`. Then click on the "Reload"-Button for the Application with the `/` path.
-
 # Configuring Jenkins servers
 
 The Jenkins servers are configured in `/home/sybil/jenkinsservers.json`, and it looks something like this:
@@ -152,6 +142,16 @@ Let's break this down:
 These are the same URLs as in the `jenkins.json` where they are used as identifiers. **If you change a URL here, you have to change it there, too!**
 * `user` is a user that has read access to the API.
 * `key` is the user's API key, which can be found on the user's *Configure* page under *API Token*.
+
+
+# Restarting Sybil
+
+If you change any file other than `jenkins.json` you have to restart the server.  
+To do that go to the [Tomcat manager](http://api.sybil.synyx.coffee/manager/html) and login with username `sybil` and password `ramkin`. Then click on the "Reload"-Button for the Application with the `/` path.
+
+# Servers
+
+Sybil runs on `sybil.synyx.coffee` on a tomcat server in /home/sybil/tomcat/, this wiki runs on the user `sybil` user in a screen named `gitit`.
 
 ## Restarting the Wiki
 
