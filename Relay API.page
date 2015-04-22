@@ -1,0 +1,69 @@
+---
+format: markdown
+title: Relay API
+...
+
+# Introduction
+
+The relays have an API for switching them over the net. It is accessible at:  
+`http://api.sybil.synyx.coffee/configuration/relays/` and  
+`http://api.sybil.synyx.coffee/configuration/relays/{name}`
+
+# Examples
+
+## Retrieving the states of all relays
+
+Perform a `GET` request to `http://api.sybil.synyx.coffee/configuration/relays/` and you should receive a response similar to this:
+
+> Status → 200 OK  
+> Content-Type → application/hal+json
+
+---
+
+```
+{
+  "_links": {
+    "self": {
+      "href": "http://localhost:8080/configuration/relays"
+    }
+  },
+  "_embedded": {
+    "sybil:relays": [
+      {
+        "name": "relayone",
+        "uid": "rAL",
+        "brick": {
+          "name": "relaybrick",
+          "hostname": "relayhost",
+          "port": 4223
+        },
+        "relay1": true,
+        "relay2": false,
+        "_links": {
+          "self": {
+            "href": "http://api.sybil.synyx.coffee/configuration/relays/relayone"
+          }
+        }
+      },
+      {
+        "name": "relaytwo",
+        "uid": "fBc",
+        "brick": {
+          "name": "relaybrick",
+          "hostname": "relayhost",
+          "port": 4223
+        },
+        "relay1": false,
+        "relay2": true,
+        "_links": {
+          "self": {
+            "href": "http://api.sybil.synyx.coffee/configuration/relays/relaytwo"
+          }
+        }
+      }
+
+    ]
+  }
+}
+```
+
