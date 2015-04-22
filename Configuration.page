@@ -79,6 +79,24 @@ something went wrong and the configuration was not loaded. The old configuration
 Hopefully there should be a helpful error message, explaining what went wrong.  
 Most likely you made a mistake editing the file `jenkins.json`. You should go back and make sure it is valid JSON and conforms to the format in the example above.
 
+# Configuring Jenkins servers
+
+The Jenkins servers are configured in `/home/sybil/jenkinsservers.json`, and it looks something like this:
+
+```
+[
+  { "url": "https://jenkins1.example.com", "user": "sybil", "key": "malcolmreynolds"},
+  { "url": "http://jenkins2.example.com", "user": "sybil", "key": "jamestkirk"},
+]
+```
+
+Let's break this down:
+
+* `url` is the base URL under which the Jenkins server runs. Note that it must begin with either `http://` or `https://`, depending on its SSL support. It must not end with a slash(`/`)!  
+These are the same URLs as in the `jenkins.json` where they are used as identifiers. **If you change a URL here, you have to change it there, too!**
+* `user` is a user that has read access to the API.
+* `key` is the user's API key, which can be found on the user's *Configure* page under *API Token*.
+
 # Configuring Tinkerforge Hardware
 
 The hardware configuration is in `bricks.json`, `ledstrips.json`, and `relays.json` in `/home/sybil-config/`.  
@@ -140,26 +158,6 @@ Let's go through this:
 ```
 
 This is analogous to the LED Strip configuration, only with less options.
-
-# Configuring Jenkins servers
-
-The Jenkins servers are configured in `/home/sybil/jenkinsservers.json`, and it looks something like this:
-
-```
-[
-  { "url": "https://jenkins.synyx.de", "user": "sybil", "key": "malcolmreynolds"},
-  { "url": "http://jenkins-contargo.synyx.de", "user": "sybil", "key": "jamestkirk"},
-  { "url": "http://jenkins.lgl-build.synyx.coffee", "user": "sybil", "key": "jacksparrow"}
-]
-```
-
-Let's break this down:
-
-* `url` is the base URL under which the Jenkins server runs. Note that it must begin with either `http://` or `https://`, depending on its SSL support. It must not end with a slash(`/`)!  
-These are the same URLs as in the `jenkins.json` where they are used as identifiers. **If you change a URL here, you have to change it there, too!**
-* `user` is a user that has read access to the API.
-* `key` is the user's API key, which can be found on the user's *Configure* page under *API Token*.
-
 
 # Restarting Sybil
 
