@@ -78,6 +78,8 @@ Each listed relay-bricklet has two relays (`relay1` and `relay2`) which can have
 
 Perform a `PUT` request to `http://api.sybil.synyx.coffee/configuration/relays/` with a request body like the following:
 
+> Content-Type: application/json
+
 ---
 
 ```
@@ -97,3 +99,32 @@ Perform a `PUT` request to `http://api.sybil.synyx.coffee/configuration/relays/`
 ---
 
 Set the single member of the `values`-array to `true` to turn all relays on, or to `false` to turn all relays off.
+
+## Turning a single relay on or off
+
+Perform a `PATCH` request to `http://api.sybil.synyx.coffee/configuration/relays/{name}` with a request body like the following:
+
+> Content-Type: application/json
+
+---
+
+```
+{
+  "patches": [
+    {
+      "action": "set",
+      "target": "relay2",
+      "values": [
+        "false"
+      ]
+    }
+  ]
+}
+
+```
+
+---
+
+This is turns the second relay on the bricklet off. Replace `relay2` with `relay1` to switch the first relay and `false` with `true` to turn the relay on.  
+You can add as many patches to the `patches`-array as you need so you can turn both arrays of a bricklet with a single `PATCH` request.
+
