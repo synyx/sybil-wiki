@@ -67,3 +67,33 @@ Perform a `GET` request to `http://api.sybil.synyx.coffee/configuration/relays/`
 }
 ```
 
+---
+
+Each listed relay-bricklet has two relays (`relay1` and `relay2`) which can have one of two states:
+
+* `true` - the relay is switched ON
+* `false` - the relay is switched OFF
+
+## Turning all relays on or off
+
+Perform a `PUT` request to `http://api.sybil.synyx.coffee/configuration/relays/` with a request body like the following:
+
+---
+
+```
+{
+  "patches": [
+    {
+      "action": "set",
+      "target": "relays",
+      "values": [
+        "true"
+      ]
+    }
+  ]
+}
+```
+
+---
+
+Set the single member of the `values`-array to `true` to turn all relays on, or to `false` to turn all relays off.
