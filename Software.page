@@ -7,6 +7,14 @@ title: Software
 
 Everything is running on a VM on `sybil.synyx.coffee`.
 
-## Sybil
+## Sybil / Tomcat
 
 Sybil is running as the ROOT app in a tomcat located at `/home/sybil/tomcat` from a war file located at `/home/sybil/sybil/webapps/sybil-0.1.war`.
+
+It can be managed from the [Tomcat Manager](http://api.sybil.synyx.coffee/manager/html).
+
+## Wiki
+
+This wiki is a gitit wiki running from within a screen called `gitit`, it's files are located at `/home/sybil/doc`.  
+There the actual wiki data is in a git-managed directory called `sybil-wiki` and the wiki configuration is in a file called `wiki.conf`.  
+To run the wiki (preferrably as a service or inside a screen), run `./runwiki.sh`.
