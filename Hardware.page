@@ -1,0 +1,77 @@
+---
+format: markdown
+title: Hardware
+...
+
+# Introduction
+
+Sybil uses the [Tinkerforge platform](http://www.tinkerforge.com/).
+
+The typical [stack](http://www.tinkerforge.com/en/doc/Primer.html#primer-stack) consists of a [Master Brick](http://www.tinkerforge.com/en/doc/Hardware/Bricks/Master_Brick.html) and an [Ethernet Extension](http://www.tinkerforge.com/en/doc/Hardware/Master_Extensions/Ethernet_Extension.html#ethernet-extension) with at least one [Bricklet](http://www.tinkerforge.com/en/doc/Primer.html#primer-bricklets).
+
+# Tinkerforge
+
+## Bricklets
+
+Sybil so far supports two types of bricklets:
+
+* [LED Strip Bricklet](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/LED_Strip.html#led-strip-bricklet)
+* [Dual Relay Bricklet](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Dual_Relay.html#dual-relay-bricklet)
+
+## LED Stack
+
+A LED Stack consists of:
+
+* A Master Brick
+* An Ethernet Extension
+* A LED Strip bricklet with connected LED Strip
+* A [PSP](https://en.wikipedia.org/wiki/PlayStation_Portable) [Power socket](http://www.dx.com/p/repair-parts-replacement-power-socket-port-for-psp-1000-13261) connected to the LED Strip bricklet's power input.
+
+Why a PSP power socket? Because [these cables](http://www.dx.com/p/usb-data-and-charging-cable-for-psp-3000-2000-1000-110cm-length-28732) exist, which provide Mini-USB (for the Master brick) and a barrel connector (for the LED Strip) at once. This is the most convenient method for powering both the LED strip and the Master brick.http://www.dx.com/p/usb-data-and-charging-cable-for-psp-3000-2000-1000-110cm-length-28732
+
+### Pictures
+It looks like this:
+![LED Stack from the front](/led_stack_front.jpg)
+
+From bottom to top these are:
+
+* A Master Brick with a Mini-USB cable connected for power.
+* An Ethernet Extension with an Ethernet cable connected for data.
+* A LED Strip bricklet with the LED Strip and a PSP power cable connected.
+
+A picture from the top without the data and power connectors:
+![LED Stack from the top](/led_stack_nc_top.jpg)
+
+This shows the PSP power connector and the 1m LED strip.
+
+A closeup of the PSP power connector plugged in.
+![LED Stack power connector](/led_stack_power.jpg)
+
+## Relay Stack
+
+A Relay Stack consists of:
+
+* One or more Master Bricks
+* A PoE-enabled Ethernet Extension
+* One or more Dual Relay Bricklets (not physically "stacked" on the Stack)
+
+Why PoE for power and not USB? Since, unlike with the LED Stack, there is nothing else that needs 5V and we need an Ethernet connection anyway POE is the most convenient option in this case.
+
+The relay bricklets go in their own cases, since they switch 240V and should not be touched!
+
+### Pictures
+
+From the top:
+![Relay Stack from top](/relay_stack_top.jpg)
+This shows the Ethernet cable coming into the PoE-enabled Ethernet Extension and the 8 bricklet cables connected to two Master Bricks.
+
+Here a closeup of the Bricklet connectors on the Master Bricks:
+![Closeup of 8 Bricklet connectors connected to 2 Master Bricks](/relay_stack_closeup_bricklets.jpg)
+
+And finally a picture of a Relay bricklet (without case):
+![Relay bricklet](/relay.jpg)
+
+# Configuration
+
+See [Configuration]()
+
