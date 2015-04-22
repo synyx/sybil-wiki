@@ -21,6 +21,11 @@ This wiki is a gitit wiki running from within a screen called `gitit`, its files
 There the actual wiki data is in a git-managed directory called `sybil-wiki` and the wiki configuration is in a file called `wiki.conf`.  
 To run the wiki (preferrably as a service or inside a screen), run `./runwiki.sh`.
 
+### Restarting the Wiki
+
+If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
+To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
+
 It is reachable at [`http://doc.sybil.synyx.coffee/`]().
 
 ## Static website
