@@ -4,10 +4,16 @@ toc: yes
 title: Welcome to the Sybil Documentation Wiki
 ...
 
-# Getting Started
+Sybil currently runs three services: Jenkins Build Breaker Lights, LED Control, & Relay Control.
+Jenkins Build Breaker Lights means it is showing the state (Success, Unstable, or Failed) of a Jenkins job as a color on a LED strip.  
+LED Control allows controlling said LED strips directly over a web API.  
+Relay Control allows the switching of relays and thus any electronic device over a web API.
 
-Sybil currently runs only one service: Jenkins Build Breaker Lights.  
-This means it is showing the state (Success, Unstable, or Failed) of a Jenkins job as a color on a LED strip.
+[Hardware]()
+
+[Software]()
+
+# Getting Started
 
 [Configuration]()  
 
