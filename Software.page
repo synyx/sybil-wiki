@@ -1,0 +1,12 @@
+---
+format: markdown
+title: Software
+...
+
+# Servers
+
+Everything is running on a VM on `sybil.synyx.coffee`.
+
+## Sybil
+
+Sybil is running as the ROOT app in a tomcat located at `/home/sybil/tomcat` from a war file located at `/home/sybil/sybil/webapps/sybil-0.1.war`.
