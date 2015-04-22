@@ -13,7 +13,7 @@ Sybil is running as the ROOT app in a tomcat located at `/home/sybil/tomcat` fro
 
 It can be managed from the [Tomcat Manager](http://api.sybil.synyx.coffee/manager/html).
 
-It is reachable at `http://api.sybil.synyx.coffee/`.
+It is reachable at [`http://api.sybil.synyx.coffee/`]().
 
 ## Wiki
 
@@ -21,10 +21,10 @@ This wiki is a gitit wiki running from within a screen called `gitit`, its files
 There the actual wiki data is in a git-managed directory called `sybil-wiki` and the wiki configuration is in a file called `wiki.conf`.  
 To run the wiki (preferrably as a service or inside a screen), run `./runwiki.sh`.
 
-It is reachable at `http://doc.sybil.synyx.coffee/`
+It is reachable at [`http://doc.sybil.synyx.coffee/]()`
 
 ## Static website
 
 The static website has its files at `/home/sybil/public_html`.
 
-It is reachable at `http://sybil.synyx.coffee/`
+It is reachable at [`http://sybil.synyx.coffee/`]().
