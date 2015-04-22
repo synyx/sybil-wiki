@@ -21,7 +21,7 @@ Relay Control allows the switching of relays and thus any electronic device over
 
 [Configuration]()  
 
-[Directly accessing the LEDs](Hidden API)
+[Directly accessing the LEDs](LED API)
 
 # Editing this wiki
 
