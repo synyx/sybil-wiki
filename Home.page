@@ -23,6 +23,8 @@ Relay Control allows the switching of relays and thus any electronic device over
 
 [Directly accessing the LEDs](LED API)
 
+[Directly accessing the Relays](Relay API)
+
 # Editing this wiki
 
 This wiki uses Pandoc to create it's pages. For further information on supported markup languages, see [Help](). The default is Markdown with [Pandoc Extensions](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown) but without syntax-highlighting.
