@@ -114,7 +114,11 @@ The hardware configuration is in `bricks.json`, `ledstrips.json`, and `relays.js
 
 This should be pretty self-explanatory.
 
-## LED Strips
+## Bricklets
+
+**Note that all bricklets' names must be unique!**
+
+### LED Strips
 
 `ledstrips.json` looks something like this:
 
@@ -146,7 +150,7 @@ Let's go through this:
 * `brick` is the name of the brick (configured above) to which the LED Strip bricklet is connected.
 * `okay*`, `warning*`, and `critical*` are *optional* and allow to set the colors of the different states to whatever you like.
 
-## Relays
+### Relays
 
 `relays.json` looks something like this:
 
