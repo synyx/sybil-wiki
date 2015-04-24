@@ -27,7 +27,7 @@ A LED Stack consists of:
 * A LED Strip bricklet with connected LED Strip
 * A [PSP](https://en.wikipedia.org/wiki/PlayStation_Portable) [Power socket](http://www.dx.com/p/repair-parts-replacement-power-socket-port-for-psp-1000-13261) connected to the LED Strip bricklet's power input.
 
-Why a PSP power socket? Because [these cables](http://www.dx.com/p/usb-data-and-charging-cable-for-psp-3000-2000-1000-110cm-length-28732) exist, which provide Mini-USB (for the Master brick) and a barrel connector (for the LED Strip) at once. This is the most convenient method for powering both the LED strip and the Master brick.http://www.dx.com/p/usb-data-and-charging-cable-for-psp-3000-2000-1000-110cm-length-28732
+Why a PSP power socket? Because [these cables](http://www.dx.com/p/usb-data-and-charging-cable-for-psp-3000-2000-1000-110cm-length-28732) exist, which provide Mini-USB (for the Master brick) and a barrel connector (for the LED Strip) at once. This is the most convenient method for powering both the LED strip and the Master brick.
 
 ### Pictures
 It looks like this:
