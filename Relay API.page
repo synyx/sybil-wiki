@@ -76,7 +76,7 @@ Each listed relay-bricklet has two relays (`relay1` and `relay2`) which can have
 
 ## Turning all relays on or off
 
-Perform a `PUT` request to `http://api.sybil.synyx.coffee/configuration/relays/` with a request body like the following:
+Perform a `PATCH` request to `http://api.sybil.synyx.coffee/configuration/relays/` with a request body like the following:
 
 > Content-Type: application/json
 
