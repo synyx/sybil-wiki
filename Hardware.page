@@ -61,15 +61,21 @@ The relay bricklets go in their own cases, since they switch 240V and should not
 
 ### Pictures
 
+Front:
+![Relay Stack from the front](/relay_stack_closeup_ethernet.jpg)  
+
+This shows the two Master Bricks at the bottom (note that there is no USB cable connected, as power & data come over the Ethernet connection) and the Ethernet Extension on top.
+
 From the top:
-![Relay Stack from top](/relay_stack_top.jpg)
+![Relay Stack from top](/relay_stack_top.jpg)  
+
 This shows the Ethernet cable coming into the PoE-enabled Ethernet Extension and the 8 bricklet cables connected to two Master Bricks.
 
 Here a closeup of the Bricklet connectors on the Master Bricks:
-![Closeup of 8 Bricklet connectors connected to 2 Master Bricks](/relay_stack_closeup_bricklets.jpg)
+![Closeup of 8 Bricklet connectors connected to 2 Master Bricks](/relay_stack_closeup_bricklets.jpg)  
 
 And finally a picture of a Relay bricklet (without case):
-![Relay bricklet](/relay.jpg)
+![Relay bricklet](/relay.jpg)  
 
 # Configuration
 
