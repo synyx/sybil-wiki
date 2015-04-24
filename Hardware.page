@@ -55,7 +55,7 @@ A Relay Stack consists of:
 * A PoE-enabled Ethernet Extension
 * One or more Dual Relay Bricklets (not physically "stacked" on the Stack)
 
-Why PoE for power and not USB? Since, unlike with the LED Stack, there is nothing else that needs 5V and we need an Ethernet connection anyway POE is the most convenient option in this case.
+Why PoE for power and not USB? Since, unlike with the LED Stack, there is nothing else that needs 5V and we need an Ethernet connection anyway, so POE is the most convenient option in this case.
 
 The relay bricklets go in their own cases, since they switch 240V and should not be touched!
 
