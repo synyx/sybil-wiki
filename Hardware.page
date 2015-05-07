@@ -74,8 +74,11 @@ This shows the Ethernet cable coming into the PoE-enabled Ethernet Extension and
 Here a closeup of the Bricklet connectors on the Master Bricks:  
 ![Closeup of 8 Bricklet connectors connected to 2 Master Bricks](/relay_stack_closeup_bricklets.jpg)  
 
-And finally a picture of a Relay bricklet (without case or connected electronics):  
+This is a Relay bricklet (without case or connected electronics):  
 ![Relay bricklet](/relay.jpg)  
+
+And finally, here it is, in its case, with a mains power cable connected:  
+![Relay bricklet in case](/relay_case.jpg)
 
 # Configuration
 
