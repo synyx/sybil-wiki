@@ -107,8 +107,8 @@ The hardware configuration is in `bricks.json`, `ledstrips.json`, and `relays.js
 
 ```
 [
-  {"name": "indybrick", "hostname": "synerforge001"},
-  {"name": "adminbrick", "hostname": "synerforge002", "port": 4223}
+  {"name": "indybrick", "hostname": "synerforge001", "uid": "6e6uJ7"},
+  {"name": "adminbrick", "hostname": "synerforge002", "uid": "5VjXYE", "port": 4223}
 ]
 ```
 
