@@ -144,7 +144,7 @@ This should be pretty self-explanatory.
 
 Let's go through this:
 
-* `name` is the name under which the LED strip is addressed, for example in the `jenkins.json` configuration file (see above).
+* `name` is the unique name under which the LED strip is addressed, for example in the `jenkins.json` configuration file (see above).
 * `uid` is the unique ID of the LED Strip bricklet, it can be found through the Tinkerforge brickviwer (`brickv`).
 * `length` is the number of LEDs on the Strip.
 * `brick` is the name of the brick (configured above) to which the LED Strip bricklet is connected.
@@ -162,6 +162,70 @@ Let's go through this:
 ```
 
 This is analogous to the LED Strip configuration, only with less options.
+
+### Sensors / Buttons
+
+`sensors.json` looks something like this:
+
+```
+[
+  {
+    "name": "licht1",
+    "uid": "m3b",
+    "type": "luminance",
+    "threshold": 16,
+    "multiplier": 0.05,
+    "brick": "sensorbrick",
+    "outputs": [
+      "ledstrip_indy"
+    ]
+  },
+  {
+    "name": "bewegung1",
+    "uid": "a5d",
+    "type": "motion",
+    "timeout": 120,
+    "brick": "sensorbrick",
+    "outputs": [
+      "relayone"
+    ]
+  },
+  {
+    "name": "knopf1",
+    "uid": "hfg",
+    "type": "button",
+    "pins": "0001",
+    "brick": "sensorbrick",
+    "outputs": [
+      "relayone"
+    ]
+  },
+  {
+    "name": "knopf2",
+    "uid": "hfg",
+    "type": "button",
+    "pins": "0010",
+    "brick": "sensorbrick",
+    "outputs": [
+      "relaytwo"
+    ]
+  }
+]
+```
+
+`name`, `uid`, and `brick` are the same as with all the other bricklets.  
+The other options are as follows:
+
+* `type` is the type of the sensor. Either `luminance`, `motion` or `button`.
+
+* `threshold` is for luminance sensors only, and is the value (in lux) under which the illuminance has to fall for the associated LED strips to start becoming brighter.
+* `multiplier` is for luminance sensors only, and is the value by which the associated LED strips grow brighter. The higher the number, the brigther the LED strips.
+
+* `timeout` is for motins sensors only, and is the time (in seconds) the associated relay will stay powered.
+
+* `pins` is for buttons only, and is a bitmask of the input pins on the IO-Bricklet which will trigger the associated outputs. A 0 means an input is not active, a 1 means it is active. The leftmost digit represents pin 3, the rightmost pin 0.
+
+**Note:** Unlike other bricklets, you can configure several `button`-type inputs with the same `uid`, as long as they have different `pins` configured.
 
 # Restarting Sybil
 
