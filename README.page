@@ -17,6 +17,9 @@ This project is under heavy development and further documentation is forthcoming
     * Does this via a HTTP API.
 * Controls relays
     * Does this via a HTTP API.
+* Listens to Illuminance sensors and has them control the LED Strip brightness if illuminance falls under a threshold
+  value.
+* Listens to IO-Modules to which buttons can be connected and turns off relays when buttons are pressed. 
 * Serves a *very barebones* REST API showing the configured the bricks and bricklets. 
 
 ## Execution
