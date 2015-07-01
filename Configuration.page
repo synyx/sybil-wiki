@@ -148,7 +148,7 @@ Let's go through this:
 * `uid` is the unique ID of the LED Strip bricklet, it can be found through the Tinkerforge brickviwer (`brickv`).
 * `length` is the number of LEDs on the Strip.
 * `brick` is the name of the brick (configured above) to which the LED Strip bricklet is connected.
-* `okay*`, `warning*`, and `critical*` are *optional* and allow to set the colors of the different states to whatever you like.
+* `okay*`, `warning*`, and `critical*` are *optional **but atomic*** (i.e. you either configure none or all) and allow to set the colors of the different states to whatever you like. 
 
 ### Relays
 
