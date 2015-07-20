@@ -13,11 +13,9 @@ The typical [stack](http://www.tinkerforge.com/en/doc/Primer.html#primer-stack) 
 
 ## Bricklets
 
-Sybil so far supports two types of bricklets:
+Sybil so far supports these bricklets:
 
 * [LED Strip Bricklet](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/LED_Strip.html#led-strip-bricklet)
-* [Dual Relay Bricklet](http://www.tinkerforge.com/en/doc/Hardware/Bricklets/Dual_Relay.html#dual-relay-bricklet)
-
 ## LED Stack
 
 A LED Stack consists of:
@@ -46,39 +44,6 @@ This shows the PSP power connector and the 1m LED strip.
 
 A closeup of the PSP power connector plugged in.  
 ![LED Stack power connector](/led_stack_power.jpg)
-
-## Relay Stack
-
-A Relay Stack consists of:
-
-* One or more Master Bricks
-* A PoE-enabled Ethernet Extension
-* One or more Dual Relay Bricklets (not physically "stacked" on the Stack)
-
-Why PoE for power and not USB? Since, unlike with the LED Stack, there is nothing else that needs 5V and we need an Ethernet connection anyway, POE is the most convenient option in this case.
-
-The relay bricklets go in their own cases, since they switch 240V and should not be touched!
-
-### Pictures
-
-Front:  
-![Relay Stack from the front](/relay_stack_closeup_ethernet.jpg)  
-
-This shows the two Master Bricks at the bottom (note that there is no USB cable connected, as power & data come over the Ethernet connection) and the Ethernet Extension on top.
-
-From the top:  
-![Relay Stack from top](/relay_stack_top.jpg)  
-
-This shows the Ethernet cable coming into the PoE-enabled Ethernet Extension and the 8 bricklet cables connected to two Master Bricks.
-
-Here a closeup of the Bricklet connectors on the Master Bricks:  
-![Closeup of 8 Bricklet connectors connected to 2 Master Bricks](/relay_stack_closeup_bricklets.jpg)  
-
-This is a Relay bricklet (without case or connected electronics):  
-![Relay bricklet](/relay.jpg)  
-
-And finally, here it is, in its case, with a mains power cable connected:  
-![Relay bricklet in case](/relay_case.jpg)
 
 # Configuration
 
