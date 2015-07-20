@@ -51,6 +51,7 @@ Edit, add to or remove these lines as necessary, making sure to keep the same fo
 
 Save the file and exit the editor. In vim type `:wq`, in nano press `Ctrl+O Ctrl+X`.
 
+<<<<<<< HEAD
 ### Step 3: Load the new configuration
 
 Run
@@ -79,6 +80,8 @@ something went wrong and the configuration was not loaded. The old configuration
 Hopefully there should be a helpful error message, explaining what went wrong.  
 Most likely you made a mistake editing the file `jenkins.json`. You should go back and make sure it is valid JSON and conforms to the format in the example above.
 
+=======
+>>>>>>> 4b6f88a... Made changes
 # Configuring Jenkins servers
 
 The Jenkins servers are configured in `/home/sybil/jenkinsservers.json`, and it looks something like this:
@@ -150,93 +153,6 @@ Let's go through this:
 * `brick` is the name of the brick (configured above) to which the LED Strip bricklet is connected.
 * `okay*`, `warning*`, and `critical*` are *optional **but atomic*** (i.e. you either configure none or all) and allow to set the colors of the different states to whatever you like. 
 
-### Relays
+# Reloading configuration
 
-`relays.json` looks something like this:
-
-```
-[
-  {"name": "relayone", "uid": "rAL", "brick": "relaybrick"},
-  {"name": "relaytwo", "uid": "fBc", "brick": "relaybrick"}
-]
-```
-
-This is analogous to the LED Strip configuration, only with less options.
-
-### Sensors / Buttons
-
-`sensors.json` looks something like this:
-
-```
-[
-  {
-    "name": "licht1",
-    "uid": "m3b",
-    "type": "luminance",
-    "threshold": 16,
-    "multiplier": 0.05,
-    "brick": "sensorbrick",
-    "outputs": [
-      "ledstrip_indy"
-    ]
-  },
-  {
-    "name": "bewegung1",
-    "uid": "a5d",
-    "type": "motion",
-    "timeout": 120,
-    "brick": "sensorbrick",
-    "outputs": [
-      "relayone"
-    ]
-  },
-  {
-    "name": "knopf1",
-    "uid": "hfg",
-    "type": "button",
-    "pins": "0001",
-    "brick": "sensorbrick",
-    "outputs": [
-      "relayone"
-    ]
-  },
-  {
-    "name": "knopf2",
-    "uid": "hfg",
-    "type": "button",
-    "pins": "0010",
-    "brick": "sensorbrick",
-    "outputs": [
-      "relaytwo"
-    ]
-  }
-]
-```
-
-`name`, `uid`, and `brick` are the same as with all the other bricklets.  
-The other options are as follows:
-
-* `type` is the type of the sensor. Either `luminance`, `motion` or `button`.
-
-* `threshold` is for luminance sensors only, and is the value (in lux) under which the illuminance has to fall for the associated LED strips to start becoming brighter.
-* `multiplier` is for luminance sensors only, and is the value by which the associated LED strips grow brighter. The higher the number, the brigther the LED strips.
-
-* `timeout` is for motins sensors only, and is the time (in seconds) the associated relay will stay powered.
-
-* `pins` is for buttons only, and is a bitmask of the input pins on the IO-Bricklet which will trigger the associated outputs. A 0 means an input is not active, a 1 means it is active. The leftmost digit represents pin 3, the rightmost pin 0.
-
-**Note:** Unlike other bricklets, you can configure several `button`-type inputs with the same `uid`, as long as they have different `pins` configured.
-
-# Restarting Sybil
-
-If you change any file other than `jenkins.json` you have to restart the server.  
-To do that go to the [Tomcat manager](http://api.sybil.synyx.coffee/manager/html) and login with username `sybil` and password `ramkin`. Then click on the "Reload"-Button for the Application with the `/` path.
-
-# Servers
-
-Sybil runs on `sybil.synyx.coffee` on a tomcat server in /home/sybil/tomcat/, this wiki runs on the user `sybil` user in a screen named `gitit`.
-
-## Restarting the Wiki
-
-If you change the wiki's config file (`/home/sybil/doc/wiki.conf`) or template files (anything in `/home/sybil/doc/templates/`) you will have to restart the wiki.  
-To do that, enter the gitit screen (`screen -r gitit`), press Ctrl+C to kill the server and then run `./runwiki.sh` to start the server.
+After editing the configuration files no further actions are necessary. The next time the Jenkins status updated or the API is accessed the new configuration will be used.
