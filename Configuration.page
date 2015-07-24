@@ -155,6 +155,28 @@ Let's go through this:
 * `okay*`, `warning*`, and `critical*` are *optional **but atomic*** (i.e. you either configure none or all) and allow to set the colors of the different states to whatever you like.
 * `sensor` the name of the ambient illuminance sensor that regulated the LED strip's brightness. It is optional.  
 
+### Ambient Illumination Sensors
+
+`illuminances.json` looks something likes this:
+
+```json
+[
+  {
+    "name": "indysensor",
+    "uid": "m3b",
+    "threshold": 16,
+    "multiplier": 1.0,
+    "brick": "synerforge001"
+  }
+]
+```
+
+* `name`, `uid, and `brick` are analogous to LED Strips.
+* `threshold` is the ambient illuminance, measured in lux, under which the LED strips will start getting brighter
+* `multiplier` is the factor by which the ledstrips will get brighter for every lux under the threshold.  
+
+This means that, with a threshold of 16 and a multiplier of 1.0 a measured ambient illuminance of 15 lux would result in doubled brightness of the LED strip, whereas a measured ambient illuminance of 14 would result in tripled brigthness.
+
 # Reloading configuration
 
 After editing the configuration files no further actions are necessary. The next time the Jenkins status updated or the API is accessed the new configuration will be used.
