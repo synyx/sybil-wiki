@@ -135,7 +135,7 @@ This should be pretty self-explanatory.
     "okayRed": 0, "okayGreen": 16, "okayBlue": 0,
     "warningRed": 127, "warningGreen": 127, "warningBlue": 0,
     "criticalRed": 127, "criticalGreen": 0, "criticalBlue": 0,
-    "sensor": indysensor
+    "sensor": "indysensor"
   },
   {
     "name": "admin",
