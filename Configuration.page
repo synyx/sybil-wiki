@@ -22,7 +22,7 @@ or
 
 Now you will see a file that looks similar to this:
 
-```
+```json
 {
   "https://jenkins.example.com": [
     {"name": "example1-build", "ledstrip": "example1"},
@@ -86,7 +86,7 @@ Most likely you made a mistake editing the file `jenkins.json`. You should go ba
 
 The Jenkins servers are configured in `/home/sybil/jenkinsservers.json`, and it looks something like this:
 
-```
+```json
 [
   { "url": "https://jenkins1.example.com", "user": "sybil", "key": "malcolmreynolds"},
   { "url": "http://jenkins2.example.com", "user": "sybil", "key": "jamestkirk"},
@@ -108,7 +108,7 @@ The hardware configuration is in `bricks.json`, `ledstrips.json`, and `relays.js
 
 `bricks.json` looks something like this:
 
-```
+```json
 [
   {"name": "indybrick", "hostname": "synerforge001", "uid": "6e6uJ7"},
   {"name": "adminbrick", "hostname": "synerforge002", "uid": "5VjXYE", "port": 4223}
@@ -125,7 +125,7 @@ This should be pretty self-explanatory.
 
 `ledstrips.json` looks something like this:
 
-```
+```json
 [
   {
     "name": "indy",
