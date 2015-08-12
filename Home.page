@@ -4,26 +4,34 @@ toc: yes
 title: Welcome to the Sybil Documentation Wiki
 ...
 
-# Introduction
+# Sybil
+
+## Introduction
 
 Sybil currently runs two services: **Jenkins Build Breaker Lights**, **LED Control**.
 
 * Jenkins Build Breaker Lights means it is showing the state (Success, Unstable, or Failed) of a Jenkins job as a color on a LED strip.  
 * LED Control allows controlling said LED strips directly over a HTTP API.  
 
-# Specification
+## Specification
 
 [Hardware]()
 
 [Software]()
 
-# Getting Started
+## Getting Started
 
 [Configuration]()  
 
 [Directly accessing the LEDs](LED API)
 
 [General & In-Depth info (README)](README)
+
+# OpenHAB
+
+OpenHAB currently switches (some of) the lights in the office.
+
+[OpenHAB Configuration]()
 
 # Editing this wiki
 
