@@ -34,6 +34,13 @@ The static website has its files at `/home/sybil/public_html`.
 
 It is reachable at [`http://sybil.synyx.coffee/`]().
 
+## OpenHAB
+
+OpenHAB runs in a screen named `openhab`.  
+It should reload changed configurations automatically.
+
+To restart, enter the screen session (`screen -r openhab`), press Ctrl+C and when it's finished shutting down run `./start.sh`.
+
 # Internal workings
 
 See the [README]().
