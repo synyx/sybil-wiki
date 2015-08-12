@@ -12,10 +12,15 @@ The configuration files are at
 
 Edit `openhab/configurations/items/netcontrol.items`
 
-Add another line similar to the ones already there, like this"
+Add another line similar to the ones already there, like this:  
 `Switch lights_name "Display Name" <switch> { anel="netcontrol0:F4", autoupdate="true" }`
 
 Where `lights_name` is the internal name, `"Display Name"` is the display name and `netcontrol0:F4` is the NET PwrCtrl module (in this case `netcontrol0`) and `F4` refers to the 4th relay on that module.
+
+Then edit `openhab/configurations/sitemap/default.sitemap`
+
+Add a line inside the curly braces like this:  
+`Switch item=lights_name`
 
 ## Add new NET PwrCtrl module
 
