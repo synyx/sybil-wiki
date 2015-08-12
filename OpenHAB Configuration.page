@@ -1,0 +1,40 @@
+## Login
+
+`$ ssh sybil-config@sybil.synyx.coffee`  
+The password is: `sybil-config`
+
+## Config files
+
+The configuration files lie at  
+`openhab/configurations/`
+
+## Add new lights
+
+Edit `openhab/configurations/items/netcontrol.items`
+
+Add another line similar to the ones already there, like this"
+`Switch lights_name "Display Name" <switch> { anel="netcontrol0:F4", autoupdate="true" }`
+
+Where `lights_name` is the internal name, `"Display Name"` is the display name and `netcontrol0:F4` is the NET PwrCtrl module (in this case `netcontrol0`) and `F4` refers to the 4th relay on that module.
+
+## Add new NET PwrCtrl module
+
+If you need another NET PwrCtrl module, edit `openhab/configurations/openhab.cfg`, and add another `anel:` section, like this:
+
+```
+# IP or network address (optional but recommended, defaults to 'net-control')
+anel:netcontrol1.host=netcontrol1
+
+# UDP receive port (optional, defaults to 77)
+anel:netcontrol1.udpReceivePort=7777
+
+# UDP send port (optional, defaults to 75)
+anel:netcontrol1.udpSendPort=7775
+
+# User name (optional, defaults to 'user7')
+anel:netcontrol1.user=sybil
+
+# Password (optional, defaults to 'anel')
+anel:netcontrol1.password=sybil
+```
+
