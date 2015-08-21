@@ -8,6 +8,6 @@ title: Lightswitch Configuration
 
 See [OpenHAB Configuration]() and add a new light, naming it light `lightXX` with `XX` being taken from this map:
 
-![Map of office lights](/office_lights_source.svg)
+![](/office_lights_source.svg)
 
 As long as all the new lights are correctly named and correspond to the map, the light switch UI should just work!
