@@ -6,7 +6,7 @@ title: Lightswitch Configuration
 
 # Adding a new light
 
-See [OpenHAB Configuration]() and add a new light, naming it light `lightXX` with `XX` being taken from this map:
+See [OpenHAB Configuration]() and add a new light, naming it `lightXX` with `XX` being taken from this map:
 
 ![](/office_lights_source.svg)
 
