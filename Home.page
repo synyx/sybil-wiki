@@ -33,6 +33,12 @@ OpenHAB currently switches (some of) the lights in the office.
 
 [OpenHAB Configuration]()
 
+# Lightswitch
+
+A nice UI for OpenHAB runs at [http://licht.synyx.coffee](http://licht.synyx.coffee).
+
+[Lightswitch Configuration]()
+
 # Editing this wiki
 
 This wiki uses Pandoc to create it's pages. For further information on supported markup languages, see [Help](). The default is Markdown with [Pandoc Extensions](http://johnmacfarlane.net/pandoc/README.html#pandocs-markdown) but without syntax-highlighting.
