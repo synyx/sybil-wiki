@@ -35,9 +35,7 @@ OpenHAB currently switches (some of) the lights in the office.
 
 # Lightswitch
 
-A nice UI for OpenHAB runs at [http://licht.synyx.coffee](http://licht.synyx.coffee).
-
-[Lightswitch Configuration]()
+Lightswitch is now part of the [Selfservice](https://selfservice.synyx.coffee/)
 
 # Editing this wiki
 
