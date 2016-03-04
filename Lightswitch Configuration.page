@@ -4,10 +4,4 @@ toc: no #remove to add toc
 title: Lightswitch Configuration
 ...
 
-# Adding a new light
-
-See [OpenHAB Configuration]() and add a new light, naming it `lightXX` with `XX` being the number taken from this map:
-
-![](/office_lights_source.svg)
-
-As long as all the new lights are correctly named and correspond to the map, the light switch UI should just work!
+Lightswitch is now part of the [Selfservice](https://selfservice.synyx.coffee/). New lights have to be added there.
